@@ -1134,14 +1134,16 @@ MonoBehaviour:
   _countdown: {fileID: 4701221259765610696}
   _timers: {fileID: 11400000, guid: 637c29052911b55469f79482d80faae0, type: 2}
   _pausePlay: {fileID: 4701221259721882534}
+  _continueNextTask: {fileID: 0}
   _playSprites:
   - {fileID: 21300000, guid: 5c9b05827ae74db43ac78c37ca09d32d, type: 3}
   - {fileID: 21300000, guid: baac2a5c74b527949a916caa8f25b6f0, type: 3}
-  _taskType: Brush
+  _timerType: 0
   _panels:
   - {fileID: 336558096}
   - {fileID: 1426774622}
   _initialCountdown: {fileID: 1712016141}
+  FinnishIt: 1
 --- !u!114 &1933340511
 MonoBehaviour:
   m_ObjectHideFlags: 0

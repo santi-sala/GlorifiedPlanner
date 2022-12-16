@@ -12,5 +12,7 @@ public class SO_Timers : ScriptableObject
     public int Breakfast = 20 * 60;
     [SerializeField]
     public int ChangeCLothes = 15 * 60;
-    
+
+    [SerializeField]
+    public int TESTING = 2;
 }

@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class Timer : MonoBehaviour
 {
     [SerializeField]
@@ -16,43 +17,58 @@ public class Timer : MonoBehaviour
     [SerializeField]
     private Image _pausePlay;
     [SerializeField]
-    private Sprite[] _playSprites;
+    private GameObject  _continueNextTask;
     [SerializeField]
-    private string _taskType;
+    private Sprite[] _playSprites;
+    
+    [SerializeField]
+    private TimerType _timerType;
+
     [SerializeField]
     private GameObject[] _panels;
     [SerializeField]
     private TMP_Text _initialCountdown;
 
+
     private int _initialTimer = 3;
     private int _taskTimer;
     private int _remainingTime;
+
+    public bool FinnishIt;
+
     private bool _pause = false;
 
     private void Start()
     {
-        CheckTaskType(_taskType);
+        //FinnishIt = false;
+        _panels[2].SetActive(false);
+        CheckTaskType(_timerType);
+        _continueNextTask.SetActive(false);
         StartTimer(_taskTimer);
     }
 
     private void StartTimer(int seconds)
     {
+        _panels[2].SetActive(true);
         _remainingTime = seconds;
+        FinnishIt = false;
         StartCoroutine(InitialTimer(_initialTimer));
         
     }
 
     private IEnumerator InitialTimer(int seconds)
     {
+        _panels[1].SetActive(true);
         int secondsLeft = seconds;
         while (secondsLeft >= 0)
-        {           
+        {
+            
             _initialCountdown.text = $"{secondsLeft}";
             _timerFill.fillAmount = Mathf.InverseLerp(0, seconds, secondsLeft);
             secondsLeft--;
             yield return new WaitForSeconds(1f);
         }
-        OnEnd(true, "Go!!");
+        OnEnd(true, "Go!!", _timerType);
 
         yield return new WaitForSeconds(2f);
 
@@ -65,19 +81,38 @@ public class Timer : MonoBehaviour
     {
         while(_remainingTime >= 0)
         {
-            if (!_pause)
+            if (FinnishIt)
             {
-                _countdown.text = $"{_remainingTime / 60:00} : {_remainingTime % 60:00}";
-                _timerFill.fillAmount = Mathf.InverseLerp(0, seconds, _remainingTime);
-                _remainingTime--;
-                yield return new WaitForSeconds(1f);
+                _countdown.text = ($"{(seconds - _remainingTime) / 60:00} : { (seconds - _remainingTime) % 60:00}");
+                //_countdown.text = $"{_remainingTime / 60:00} : {_remainingTime % 60:00}";
+
+                break;                
             }
-            yield return null;
+            else
+            {
+                if (!_pause)
+                {
+                    _countdown.text = $"{_remainingTime / 60:00} : {_remainingTime % 60:00}";
+                    _timerFill.fillAmount = Mathf.InverseLerp(0, seconds, _remainingTime);
+                    _remainingTime--;
+
+                    //HERE!!!
+                    if (_remainingTime == 0)
+                    {
+                        _countdown.text = $"{seconds / 60:00} : {seconds % 60:00}";
+                    }
+                    yield return new WaitForSeconds(1f);
+
+                    
+                }
+                yield return null;
+            }
         }
-        OnEnd(false, "Finish!!");
+        OnEnd(false, "Finish!!", _timerType);
+        FinnishIt = false;
     }
 
-    private void OnEnd(bool placeToDisplay, string message)
+    private void OnEnd(bool placeToDisplay, string message, TimerType taskType)
     {
         if (placeToDisplay)
         {
@@ -85,7 +120,12 @@ public class Timer : MonoBehaviour
         }
         else
         {
-            _countdown.text = message;
+            _initialCountdown.text = message;
+            Debug.Log(taskType.ToString());
+            //_countdown.text = message;
+            _continueNextTask.SetActive(true);
+            _panels[2].SetActive(false);
+            _panels[1].SetActive(true);
         }
     }
 
@@ -106,20 +146,25 @@ public class Timer : MonoBehaviour
 
     }
 
-    private void CheckTaskType(string task)
+    private void CheckTaskType(TimerType task)
     {
         switch (task)
         {
-            case "Brush":
+            case TimerType.Brush:
                 _taskTimer = _timers.BrushingTeeth;
                 break;
-            case "Breakfast":
+            case TimerType.Breakfast:
                 _taskTimer = _timers.Breakfast;
                 break;
-            case "Clothes":
+            case TimerType.Clothes:
                 _taskTimer = _timers.ChangeCLothes;
+                break;
+            case TimerType.TESTING:
+                _taskTimer = _timers.TESTING;
                 break;
             
         }
     }
+
+
 }

@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f74f3c0ff7bf59b4098c79a8a813af33, type: 3}
   m_Name: SO_WeatherParameters
   m_EditorClassIdentifier: 
-  Temperature: 10
+  Temperature: 20
