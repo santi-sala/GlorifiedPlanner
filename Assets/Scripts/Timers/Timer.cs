@@ -34,6 +34,9 @@ public class Timer : MonoBehaviour
     private int _taskTimer;
     private int _remainingTime;
 
+    
+    private ToothBrushAnim _setToothBrushAnimation;
+
     public bool FinnishIt;
 
     private bool _pause = false;
@@ -41,6 +44,8 @@ public class Timer : MonoBehaviour
     private void Start()
     {
         //FinnishIt = false;
+        
+        //_setToothBrushAnimation = new ToothBrushAnim();
         _panels[2].SetActive(false);
         CheckTaskType(_timerType);
         _continueNextTask.SetActive(false);
@@ -73,6 +78,11 @@ public class Timer : MonoBehaviour
         yield return new WaitForSeconds(2f);
 
         _panels[1].SetActive(false);
+
+        if (_timerType == TimerType.Brush)
+        {
+            _setToothBrushAnimation.StartBrushing();
+        }
 
         StartCoroutine(UpdateTimer(_taskTimer));
     }
@@ -123,6 +133,12 @@ public class Timer : MonoBehaviour
             _initialCountdown.text = message;
             Debug.Log(taskType.ToString());
             //_countdown.text = message;
+
+            if (_timerType == TimerType.Brush)
+            {
+                _setToothBrushAnimation.StopBrushing();
+            }
+
             _continueNextTask.SetActive(true);
             _panels[2].SetActive(false);
             _panels[1].SetActive(true);
