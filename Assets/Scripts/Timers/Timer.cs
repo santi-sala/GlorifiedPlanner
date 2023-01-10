@@ -41,11 +41,15 @@ public class Timer : MonoBehaviour
 
     private bool _pause = false;
 
+    private void Awake()
+    {
+        _setToothBrushAnimation = GetComponent<ToothBrushAnim>();
+    }
+
     private void Start()
     {
         //FinnishIt = false;
-        
-        //_setToothBrushAnimation = new ToothBrushAnim();
+            
         _panels[2].SetActive(false);
         CheckTaskType(_timerType);
         _continueNextTask.SetActive(false);
@@ -153,11 +157,41 @@ public class Timer : MonoBehaviour
         {
             _pausePlay.sprite = _playSprites[0];
             _panels[0].SetActive(true);
+
+            switch (_timerType)
+            {
+                case TimerType.Brush:
+                    _setToothBrushAnimation._toothBrushAnimator.speed = 0;
+                    break;
+                case TimerType.Breakfast:
+                    break;
+                case TimerType.Clothes:
+                    break;
+                case TimerType.TESTING:
+                    break;
+                default:
+                    break;
+            }
         } 
         else
         {
             _pausePlay.sprite = _playSprites[1];
             _panels[0].SetActive(false);
+
+            switch (_timerType)
+            {
+                case TimerType.Brush:
+                    _setToothBrushAnimation._toothBrushAnimator.speed = 1;
+                    break;
+                case TimerType.Breakfast:
+                    break;
+                case TimerType.Clothes:
+                    break;
+                case TimerType.TESTING:
+                    break;
+                default:
+                    break;
+            }
         }
 
     }

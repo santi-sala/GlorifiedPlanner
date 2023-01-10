@@ -4,13 +4,7 @@ using UnityEngine;
 
 public class ToothBrushAnim : MonoBehaviour
 {
-    [SerializeField]
-    private Animator _toothBrushAnimator;
-
-    private void Start()
-    {
-        _toothBrushAnimator = GetComponent<Animator>(); ;
-    }
+    public Animator _toothBrushAnimator;
 
     public void StartBrushing()
     {
