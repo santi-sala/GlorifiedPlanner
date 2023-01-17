@@ -17,8 +17,6 @@ public class WeatherManager : MonoBehaviour, IGameManager
     
     public void Startup(NetworkService service)
     {
-        Debug.Log("Here!!");
-
         network = service;
         StartCoroutine(network.GetWeatherXML(OnXMLDataLoaded));
 
@@ -42,8 +40,8 @@ public class WeatherManager : MonoBehaviour, IGameManager
         //feelsLikeValueInt = Math.Round(feelsLikeValueInt, 1);
         //Debug.Log($"Feels like Value: {feelsLikeValue}");
 
-        Debug.Log($"Temperature Value: {temperatureValue}"); 
-        Debug.Log($"Temperature Value: {temperatureValueInt}");
+        //Debug.Log($"Temperature Value: {temperatureValue}"); 
+        //Debug.Log($"Temperature Value: {temperatureValueInt}");
 
 
         _currentTemperature.text = temperatureValueInt + "°C";

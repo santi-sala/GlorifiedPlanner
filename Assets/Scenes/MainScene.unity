@@ -2391,7 +2391,7 @@ RectTransform:
   - {fileID: 1838250198}
   - {fileID: 255017956}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3524,7 +3524,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1153904581
 GameObject:
@@ -4101,7 +4101,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1363489906
 MonoBehaviour:
@@ -4920,7 +4920,7 @@ RectTransform:
   - {fileID: 31200778}
   - {fileID: 83193235}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -5102,7 +5102,7 @@ RectTransform:
   - {fileID: 661730810}
   - {fileID: 667285703}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -6048,3 +6048,66 @@ MonoBehaviour:
   references:
     version: 2
     RefIds: []
+--- !u!1001 &8624628021776170091
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 2
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8624628022744018544, guid: 3f5ebea0076d54f458e6e0646fe72021, type: 3}
+      propertyPath: _ScreenOrientationSetToHorizontal
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8624628022744018545, guid: 3f5ebea0076d54f458e6e0646fe72021, type: 3}
+      propertyPath: m_Name
+      value: ScreenManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8624628022744018551, guid: 3f5ebea0076d54f458e6e0646fe72021, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8624628022744018551, guid: 3f5ebea0076d54f458e6e0646fe72021, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.063656904
+      objectReference: {fileID: 0}
+    - target: {fileID: 8624628022744018551, guid: 3f5ebea0076d54f458e6e0646fe72021, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.2817147
+      objectReference: {fileID: 0}
+    - target: {fileID: 8624628022744018551, guid: 3f5ebea0076d54f458e6e0646fe72021, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.070834294
+      objectReference: {fileID: 0}
+    - target: {fileID: 8624628022744018551, guid: 3f5ebea0076d54f458e6e0646fe72021, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8624628022744018551, guid: 3f5ebea0076d54f458e6e0646fe72021, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8624628022744018551, guid: 3f5ebea0076d54f458e6e0646fe72021, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8624628022744018551, guid: 3f5ebea0076d54f458e6e0646fe72021, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8624628022744018551, guid: 3f5ebea0076d54f458e6e0646fe72021, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8624628022744018551, guid: 3f5ebea0076d54f458e6e0646fe72021, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8624628022744018551, guid: 3f5ebea0076d54f458e6e0646fe72021, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_AddedGameObjects: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3f5ebea0076d54f458e6e0646fe72021, type: 3}

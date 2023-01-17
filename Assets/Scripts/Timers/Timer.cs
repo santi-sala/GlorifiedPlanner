@@ -135,8 +135,6 @@ public class Timer : MonoBehaviour
         else
         {
             _initialCountdown.text = message;
-            Debug.Log(taskType.ToString());
-            //_countdown.text = message;
 
             if (_timerType == TimerType.Brush)
             {
