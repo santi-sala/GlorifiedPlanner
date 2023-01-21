@@ -138,6 +138,7 @@ public class Timer : MonoBehaviour
 
             if (_timerType == TimerType.Brush)
             {
+                _setToothBrushAnimation._toothBrushAnimator.speed = 0;
                 _setToothBrushAnimation.StopBrushing();
             }
 

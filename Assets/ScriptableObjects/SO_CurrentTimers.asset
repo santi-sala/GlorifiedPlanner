@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1be9bd6d24b6a64a9aca3043ebcbdd5, type: 3}
   m_Name: SO_CurrentTimers
   m_EditorClassIdentifier: 
-  BrushingTeeth: 120
+  BrushingTeeth: 10
   Breakfast: 1200
   ChangeCLothes: 900
+  TESTING: 2
