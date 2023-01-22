@@ -11,7 +11,11 @@ public class ToggleCanvases : MonoBehaviour
     [SerializeField]
     private GameObject _coinCanvas;
 
-
+    private void Awake()
+    {
+        _avatarCanvas.SetActive(false);
+        _coinCanvas.SetActive(false);
+    }
 
     public void ToChangeAvatar()
     {

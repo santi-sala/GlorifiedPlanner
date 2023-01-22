@@ -39,7 +39,7 @@ public class ChangeAvatar : MonoBehaviour
         {
             item.SetCategoryAndLabel(item.GetCategory(), _mlabels[_id]);
         }
-        //Debug.Log("Current ID is: " + _id);
+        Debug.Log("Current ID is: " + _id);
 
     }
 
@@ -55,6 +55,7 @@ public class ChangeAvatar : MonoBehaviour
         {
             item.SetCategoryAndLabel(item.GetCategory(), _mlabels[_id]);
         }
+        Debug.Log("Current ID is: " + _id);
     }
 
     public void SaveAvatar()

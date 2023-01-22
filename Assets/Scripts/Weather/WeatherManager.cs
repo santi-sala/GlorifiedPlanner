@@ -44,7 +44,7 @@ public class WeatherManager : MonoBehaviour, IGameManager
         //Debug.Log($"Temperature Value: {temperatureValueInt}");
 
 
-        _currentTemperature.text = temperatureValueInt + "°C";
+        _currentTemperature.text = temperatureValueInt + "Â°C";
         _weatherValues.Temperature = temperatureValueInt;
 
         status = ManagerStatus.Started;
