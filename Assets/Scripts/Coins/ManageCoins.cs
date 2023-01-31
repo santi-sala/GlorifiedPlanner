@@ -15,8 +15,9 @@ public class ManageCoins : MonoBehaviour
     private int _numberOfCoins;
     private string coins = "0";
 
-    private void Start()
+    private void Awake()
     {
+        
         foreach (var display in _displayCoinsMain)
         {
             display.text = Convert.ToString(_currentCoins.Coins);
